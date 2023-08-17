@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for var in $(aws ec2 describe-regions --query "Regions[].{Name:RegionName}" --output text)
+do
+
+echo "==================================================$var==============================================================="
+aws ec2 describe-instances --query "Reservations[*].Instances[*].[InstanceType]" --output text --region $var > instance_types_$var.txt
+python3 instance_list.py instance_types_$var.txt
+
+done
