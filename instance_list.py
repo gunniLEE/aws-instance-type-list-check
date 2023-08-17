@@ -2,10 +2,12 @@ import os
 import sys
 import csv
 
+import pandas as pd
 from collections import Counter
 
 
-instance_list = [['인스턴스 타입', '플랫폼', '개수', '리전']]
+instance_list = [['인스턴스 타입', '플랫폼', '개수', '리전', '온디멘드 할인율', 'RI(1년) 할인율', 'RI(3년) 할인율',
+                  'Savings Plan(1년) 할인율', 'Savings Plan(3년) 할인율']]
 
 
 #CSV 파일 생성
@@ -29,21 +31,27 @@ with open(sys.argv[1], "r") as f:
 # 인스턴스 타입 개수 계산
 instance_type_counts = Counter(instance_types)
 
-# 결과 출력
-print("Count\tName\tPlatform\tRegion")
-print("-----\t----\t----\t----")
-for instance_type, count in instance_type_counts.items():
-    print(f"{count}\t{instance_type}\t{sys.argv[2]}")
-    
-    instance_types = instance_type.split()
+if len(instance_type_counts) != 0:
+    print(sys.argv[2] + " >>>>>>>>>>>>>>>>>>>>>>>>>>>")
+    print("Count\tName\tPlatform\tRegion")
+    print("-----\t----\t----\t----")
 
-    instance_types.append(count)
-    instance_types.append(sys.argv[2])
+    # 결과 출력
+    for instance_type, count in instance_type_counts.items():
+        instance_types = instance_type.split('\t')
+        instance_types.append(count)
+        instance_types.append(sys.argv[2])
 
-    instance_list.append(instance_types)
+        instance_list.append(instance_types)
 
 
-    if instance_list != []:
-        write_csv(sys.argv[2], instance_list)
-    else:
-        pass
+        if instance_list != []:
+            write_csv(sys.argv[2], instance_list)
+            print(f"{count}\t{instance_type}\t{sys.argv[2]}")
+        else:
+            pass
+
+    print('\n')
+
+else:
+    print(sys.argv[2] + " region dosen't have instance.\n")
