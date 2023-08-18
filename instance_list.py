@@ -6,10 +6,15 @@ import pandas as pd
 from collections import Counter
 
 
-instance_list = [['인스턴스 타입', '플랫폼', '개수', '리전', '온디멘드 시간당 비용', 'Standard RI(1년) 할인율','Converterble RI(1년) 할인율',
-                  'Standard RI(3년) 할인율', 'Converterble RI(3년) 할인율', 'Instance Savings Plan(1년) 할인율', 'Compute Savings Plan(1년) 할인율',
-                  'Instance Savings Plan(1년) 할인율', 'Compute Savings Plan(3년) 할인율']]
+# instance_list = [['인스턴스 타입', '플랫폼', '개수', '리전', '온디멘드 시간당 비용', 'Standard RI(1년) 할인율','Converterble RI(1년) 할인율',
+#                   'Standard RI(3년) 할인율', 'Converterble RI(3년) 할인율', 'Instance Savings Plan(1년) 할인율 - 선결제 없음', 'Instance Savings Plan(1년) 할인율 - 부분 선결제', 
+#                   'Instance Savings Plan(1년) 할인율 - 전체 선결제', 'Compute Savings Plan(1년) 할인율 - 선결제 없음', 'Compute Savings Plan(1년) 할인율 - 부분 선결제',
+#                   'Compute Savings Plan(1년) 할인율 - 전체 선결제', 'Instance Savings Plan(3년) 할인율 - 선결제 없음', 'Instance Savings Plan(3년) 할인율 - 부분 선결제', 
+#                   'Instance Savings Plan(3년) 할인율 - 전체 선결제', 'Compute Savings Plan(3년) 할인율 - 선결제 없음' , 'Compute Savings Plan(3년) 할인율 - 부분 선결제',
+#                   'Compute Savings Plan(3년) 할인율 - 전체 선결제']]
 
+instance_list = [['인스턴스 타입', '플랫폼', '개수', '리전', '온디멘드 시간당 비용', '적용 기간', '결제 옵션', 'Standard RI 할인율','Converterble RI 할인율', 'Instance Savings Plan 할인율', 
+                  'Compute Savings Plan 할인율']]
 
 #CSV 파일 생성
 def open_csv(file_name):
