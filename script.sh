@@ -10,4 +10,6 @@ python3 instance_list.py instance_types_$var.txt $var
 done
 
 rm -rf *.txt
+
 python3 process.py
+python3 instance_ondemand_pricing.py

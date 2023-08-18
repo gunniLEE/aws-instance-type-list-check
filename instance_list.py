@@ -6,8 +6,9 @@ import pandas as pd
 from collections import Counter
 
 
-instance_list = [['인스턴스 타입', '플랫폼', '개수', '리전', '온디멘드 할인율', 'RI(1년) 할인율', 'RI(3년) 할인율',
-                  'Savings Plan(1년) 할인율', 'Savings Plan(3년) 할인율']]
+instance_list = [['인스턴스 타입', '플랫폼', '개수', '리전', '온디멘드 시간당 비용', 'Standard RI(1년) 할인율','Converterble RI(1년) 할인율',
+                  'Standard RI(3년) 할인율', 'Converterble RI(3년) 할인율', 'Instance Savings Plan(1년) 할인율', 'Compute Savings Plan(1년) 할인율',
+                  'Instance Savings Plan(1년) 할인율', 'Compute Savings Plan(3년) 할인율']]
 
 
 #CSV 파일 생성

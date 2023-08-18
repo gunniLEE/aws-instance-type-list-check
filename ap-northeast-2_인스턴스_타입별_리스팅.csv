@@ -1,0 +1,10 @@
+인스턴스 타입,플랫폼,개수,리전,온디멘드 시간당 비용,Standard RI(1년) 할인율,Converterble RI(1년) 할인율,Standard RI(3년) 할인율,Converterble RI(3년) 할인율,Instance Savings Plan(1년) 할인율,Compute Savings Plan(1년) 할인율,Instance Savings Plan(1년) 할인율,Compute Savings Plan(3년) 할인율
+t2.nano,Linux/UNIX,1,ap-northeast-2
+m5.4xlarge,Windows,4,ap-northeast-2
+c6i.2xlarge,Windows,8,ap-northeast-2
+t3.medium,Windows,2,ap-northeast-2
+m5.xlarge,Windows,1,ap-northeast-2
+m6i.4xlarge,Windows,2,ap-northeast-2
+t3.medium,Linux/UNIX,1,ap-northeast-2
+m5a.xlarge,Red Hat Enterprise Linux,1,ap-northeast-2
+m5a.large,Red Hat Enterprise Linux,1,ap-northeast-2
