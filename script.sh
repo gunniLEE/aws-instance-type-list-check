@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for var in $(aws ec2 describe-regions --query "Regions[].{Name:RegionName}" --output text --profile land-devops)
+for var in $(aws ec2 describe-regions --query "Regions[].{Name:RegionName}" --output text --profile $1)
 do
 
 #echo "==================================================$var==============================================================="
